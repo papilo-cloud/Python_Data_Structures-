@@ -26,6 +26,7 @@ class Stack:
         else:
             return False
     
+# NOTE: Uncommenting this part of the code will affect the other files where it is imported as a module
 # stack = Stack()
 
 # stack.push('Hello')
@@ -38,5 +39,7 @@ class Stack:
 
 # stack.pop()
 # print(stack.length())
-# print(stack.peek())
+# print(stack.pop())
+# print(stack.pop())
+# print(stack.pop())
 # print(stack.last())
