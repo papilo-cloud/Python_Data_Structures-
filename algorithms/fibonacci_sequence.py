@@ -7,5 +7,6 @@ def fibonacci(num):
         print(previous_fib, end=' ')
         current_fib = current_fib + previous_fib
         previous_fib = current_fib - previous_fib
+        index += 1
 
 fibonacci(8)
