@@ -35,6 +35,6 @@ class Linter:
         
                 
 linter = Linter()
-x = "var x = { y: [1, 2, 3]})"
+x = "{var x = { y: [1, 2, 3]})"
 
 print(linter.lint(x))
