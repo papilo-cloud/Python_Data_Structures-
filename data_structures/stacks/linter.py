@@ -9,15 +9,15 @@ class Linter:
         for char in text:
             if self.is_opening_brace(char):
                 self.stack.push(char)
-                
+                self.count += 1
             elif self.is_closing_brace(char):
-                popped_opening_brace = self.stack.pop()
+                if self.stack.length() > 0:
+                    popped_opening_brace = self.stack.pop()
                 
-                if not popped_opening_brace:
+                    if self.is_not_a_match(popped_opening_brace, char):
+                        return f"#{char} has mismatched opening brace "
+                else:
                     return f"#{char} doesn't have an opening brace "
-                
-                if self.is_not_a_match(popped_opening_brace, char):
-                    return f"#{char} has mismatched opening brace "
             
         if self.stack.last():
             return f"#{self.stack.last()} does not have closing braces" 
@@ -35,6 +35,6 @@ class Linter:
         
                 
 linter = Linter()
-x = "{var x = { y: [1, 2, 3]})"
+x = "()([]({}[]){}){}{()}[]{}[]()(()([[]]()))()()()[]()(){{}}()({[{}][]}[[{{}({({({})})})}]]]"
 
 print(linter.lint(x))
