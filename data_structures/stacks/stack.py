@@ -25,6 +25,11 @@ class Stack:
             return self.data_store[len(self.data_store) - 1]
         else:
             return False
+    def to_string(self):
+        to_str = ''
+        for i in self.data_store:
+            to_str += i + '\n'
+        return to_str
     
 # NOTE: Uncommenting this part of the code will affect the other files where it is imported as a module
 # stack = Stack()
