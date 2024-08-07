@@ -1,27 +1,26 @@
 class Queue:
     def __init__(self):
         self.data_store = []
-        self.size = 0
-    
+            
     def enqueue(self, elem):
         self.data_store.append(elem)
-        self.size += 1
     
     def dequeue(self):
-        self.size -= 1
-        return self.data_store.pop(0)
+        if self.data_store:
+            return self.data_store.pop(0)
+        return 'Cannot deque from an empty queue'
     
     def is_empty(self):
-        if self.size == 0:
+        if not self.data_store:
             return True
-        else:
-            return False
+        
+    def size(self):
+        return len(self.data_store)
     
     def peek(self):
-        if self.is_empty():
-            return False
-        else:
+        if not self.is_empty():
             return self.data_store[0]
+        
     def to_string(self):
         to_str = ''
         for i in self.data_store:
