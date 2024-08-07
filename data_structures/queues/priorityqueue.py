@@ -41,9 +41,7 @@ queue.enqueue('sannu', 4)
 queue.enqueue('good', 1)
 print('size',queue.size())
 
-print(f'dequeue {queue.dequeue()}')
-print(f'dequeue {queue.dequeue()}')
-print(f'dequeue {queue.dequeue()}')
-print(f'dequeue {queue.dequeue()}')
-print(f'dequeue {queue.dequeue()}')
-print(f'dequeue {queue.dequeue()}')
+print(f'first item is: {queue.peek().item}')
+print(f'dequeued first priority {queue.dequeue()}')
+
+print('size',queue.size())
