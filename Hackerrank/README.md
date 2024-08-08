@@ -5,7 +5,7 @@
 3. ## [Queues](###Queues)
 
 
-### Strings
+###Strings
 
 - [Anagram](https://github.com/papilo-cloud/Python_Data_Structures-/blob/main/Hackerrank/strings/anagram.py) Two words are anagrams of one another if their letters can be rearranged to form the other word.
 
@@ -24,7 +24,7 @@
     - It should return the string pangram if the input string is a pangram. Otherwise, it should return not pangram.
 
 
-### Stack
+###Stack
 
 - Implement a simple text editor. The editor initially contains an empty string, __*S*__. Perform  __*Q*__ operations of the following __4__ types:
 
