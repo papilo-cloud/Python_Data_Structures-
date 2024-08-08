@@ -29,9 +29,9 @@
 - Implement a simple text editor. The editor initially contains an empty string, __*S*__. Perform  __*Q*__ operations of the following __4__ types:
 
     1. append __(*W*)__ - Append string __*W*__ to the end of __*S*__.
-    delete __(*K*)__ - Delete the last __*K*__ characters of __*S*__.
-    print __(*K*)__ - Print the __*K<sup>th</sup>*__ character of __*S*__.
-    undo __()__ - Undo the last (not previously undone) operation of type __1__ or __2__, reverting __*S*__ to the state it was in prior to that operation.
+    2. delete __(*K*)__ - Delete the last __*K*__ characters of __*S*__.
+    3. print __(*K*)__ - Print the __*K<sup>th</sup>*__ character of __*S*__.
+    4. undo __()__ - Undo the last (not previously undone) operation of type __1__ or __2__, reverting __*S*__ to the state it was in prior to that operation.
 
     #### Example
     __*S*__ = __'abcde'__
