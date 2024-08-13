@@ -70,6 +70,17 @@ class LinkedList:
         while current_node:
             print(current_node.data)
             current_node = current_node.next
+    
+    def reversed(self):
+        prev = None
+        current = self.head
+        while current:
+            new_node = current.next
+            current.next = prev
+            
+            prev = current
+            current = new_node
+        self.head = prev
 
 llist = LinkedList()
 
