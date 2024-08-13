@@ -50,6 +50,31 @@ class DbLinkedList:
                     current_node.next.previous = current_node.previous
                     return True
                 current_node = current_node.next
+                
+    def reverse(self):
+        # By swapping positions
+        # current = self.head
+        # tempt = None
+        # while current:
+        #     tempt = current.previous
+        #     current.previous = current.next
+        #     current.next = tempt
+        #     current = current.previous
+        # if tempt:
+        #     self.head = tempt.previous
+
+        # By using stack -- My favorite --
+        stack = []
+        current = self.head
+        while current:
+            stack.append(current.data)
+            current = current.next
+            
+        current = self.head
+        while current:
+            current.data = stack[-1]
+            stack.pop()
+            current = current.next
     
     def display_reversed(self):
         current_node = self.tail
