@@ -64,13 +64,7 @@ class LinkedList:
             current_index += 1
         node_index = current_node.next.next
         current_node.next = node_index
-    
-    def search(self, value):
-        for node in self.display():
-            if value == node:
-                return True
-        return False
-    
+
     def display(self):
         current_node = self.head
         while current_node:
