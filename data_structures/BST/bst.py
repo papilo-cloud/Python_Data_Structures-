@@ -13,18 +13,23 @@ class Tree:
         node = Node(data)
         if not self.root_node:
             self.root_node = node
-        else:
-            current = self.root_node
+        
+        current = self.root_node
+        parent = None
+        while True:
+            parent = current
             if node.data > current.data:
-                if not current.right_child:
-                    current.right_child = node
-                else:
-                    self.insert(node)
+                current = current.right_child
+                if not current:
+                    parent.right_child = node
+                    return
             else:
-                if not self.root_node.data:
-                    self.root_node.left_child = node
-                else:
-                    self.insert(node)
+                current = current.left_child
+                if not current:
+                    parent.left_child = node
+                    return
+
+                
 
 
 tree = Tree()
