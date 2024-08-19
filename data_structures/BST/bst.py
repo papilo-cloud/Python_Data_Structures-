@@ -39,7 +39,13 @@ class Tree:
                 current = current.left_child
             else:
                 current = current.right_child
-                
+    def inorder_traversal(self, node):
+        if not node:
+            return
+        self.inorder_traversal(node.left_child)
+        print(node.data)
+        self.inorder_traversal(node.right_child)
+        
 
 
 tree = Tree()
