@@ -45,6 +45,13 @@ class Tree:
         self.inorder_traversal(node.left_child)
         print(node.data)
         self.inorder_traversal(node.right_child)
+    
+    def preorder_traversal(self, node):
+        if not node:
+            return
+        print(node.data)
+        self.preorder_traversal(node.left_child)
+        self.preorder_traversal(node.right_child)
         
 
 
