@@ -28,7 +28,17 @@ class Tree:
                 if not current:
                     parent.left_child = node
                     return
-
+    def search(self, data):
+        current = self.root_node
+        while True:
+            if not current:
+                return None
+            elif current.data == data:
+                return data
+            elif current.data > data:
+                current = current.left_child
+            else:
+                current = current.right_child
                 
 
 
