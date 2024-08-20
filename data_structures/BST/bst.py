@@ -1,3 +1,4 @@
+from collections import deque
 class Node:
     def __init__(self, data, left = None, right = None) -> None:
         self.data = data
@@ -39,6 +40,7 @@ class Tree:
                 current = current.left_child
             else:
                 current = current.right_child
+    # Depth-first traversal
     def inorder_traversal(self, node):
         if not node:
             return
@@ -52,6 +54,21 @@ class Tree:
         print(node.data)
         self.preorder_traversal(node.left_child)
         self.preorder_traversal(node.right_child)
+    
+    # Breadth-first traversal
+    def bf_traversal(self):
+        list_of_nodes = []
+        traversal_queue = deque([self.root_node])
+
+        while len(traversal_queue) > 0:
+            node = traversal_queue.popleft()
+            list_of_nodes.append(node.data)
+
+            if node.left_child:
+                traversal_queue.append(node.left_child)
+            if node.right_child:
+                traversal_queue.append(node.right_child)
+        return list_of_nodes
         
 
 
