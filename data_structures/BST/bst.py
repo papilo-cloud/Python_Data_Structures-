@@ -40,6 +40,7 @@ class Tree:
                 current = current.left_child
             else:
                 current = current.right_child
+                
     # Depth-first traversal
     def inorder_traversal(self, node):
         if not node:
@@ -69,6 +70,18 @@ class Tree:
             if node.right_child:
                 traversal_queue.append(node.right_child)
         return list_of_nodes
+    
+    def get_min(self):
+        current = self.root_node
+        while current.left_child:
+            current = current.left_child
+        return current.data
+    
+    def get_max(self):
+        current = self.root_node
+        while current.right_child:
+            current = current.right_child
+        return current.data
         
 
 
