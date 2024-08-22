@@ -98,6 +98,58 @@ class Tree:
             else:
                 parent = current
                 current = current.right_child
+                
+    # The remove operation takes O(h), where h is the height of the tree.
+    def remove(self, data):
+        parent, node = self.get_node_with_parent(data)
+        self.size -= 1
+        
+        if not (parent and node):
+            return False
+        # Get children count
+        children_count = 0
+        if node.left_child and node.right_child:
+            children_count = 2
+        elif (not node.left_child) and (not node.right_child):
+            children_count = 0
+        else:
+            children_count = 1
+        
+        if children_count == 0:
+            if parent:
+                if parent.right_child is node:
+                    parent.right_child = None
+                else:
+                    parent.left_child = None
+            else:
+                self.root_node = None
+        elif children_count == 1:
+            next_node = None
+            if node.left_child:
+                next_node = node.left_child
+            else:
+                next_node = node.right_child
+            if parent:
+                if parent.right_child is node:
+                    parent.right_child = next_node
+                else:
+                    parent.left_child = next_node
+            else:
+                self.root_node = next_node
+        
+        else:
+            parent_of_leftmost_node = node
+            leftmost_node = node.right_child
+            
+            while leftmost_node.left_child:
+                parent_of_leftmost_node = leftmost_node
+                leftmost_node = leftmost_node.left_child
+            node.data = leftmost_node.data
+            
+            if parent_of_leftmost_node.left_child == leftmost_node:
+                parent_of_leftmost_node.left_child = leftmost_node.right_child
+            else:
+                parent_of_leftmost_node.right_child = leftmost_node.right_child
         
 
 
