@@ -82,6 +82,22 @@ class Tree:
         while current.right_child:
             current = current.right_child
         return current.data
+    
+    def get_node_with_parent(self, data):
+        parent = None
+        current = self.root_node
+        
+        if not current:
+            return None
+        while True:
+            if current.data == data:
+                return (parent, current.data)
+            elif current.data > data:
+                parent = current
+                current = current.left_child
+            else:
+                parent = current
+                current = current.right_child
         
 
 
