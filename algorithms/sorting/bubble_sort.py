@@ -1,6 +1,8 @@
 def bubble_sort(list):
+    # Bubble Sort is an algorithm that sorts an array from the lowest
+    # value to the highest value.
+
     sorted = False
-    
     while not sorted:
         sorted = True
         for i in range(len(list) - 1):
