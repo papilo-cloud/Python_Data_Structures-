@@ -41,6 +41,16 @@ class LinkedList:
             current_index += 1
         return current_node.data
     
+    def lowest_value(self):
+        current = self.head.next
+        lowest = self.head.data
+        
+        while current:
+            if current.data < lowest:
+                lowest = current.data
+            current = current.next
+        return lowest
+    
     def index_of(self, value):
         current_node = self.head
         current_index = 0
@@ -88,10 +98,10 @@ llist.insert('hello')
 llist.insert('world')
 llist.insert('once')
 llist.insert('upon')
-# llist.insert('a')
-# llist.insert('time')
+llist.insert('a')
+llist.insert('time')
 # llist.delete_at_index(2)
 # llist.insert_at_index('goodmorning', 2)
 llist.display()
-
+print(llist.lowest_value())
 # print(llist.search('world'))
