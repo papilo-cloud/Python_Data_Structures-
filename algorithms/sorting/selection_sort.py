@@ -1,4 +1,6 @@
 def selection_sort(list):
+    # The Selection Sort algorithm finds the lowest value in an array and 
+    # moves it to the front of the array.
     for i in range(len(list) - 1):
         lowest_number_index = i
         for j in range(i + 1, len(list)):
