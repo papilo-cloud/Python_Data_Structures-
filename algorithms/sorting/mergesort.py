@@ -1,3 +1,6 @@
+# The Merge Sort algorithm is a divide-and-conquer algorithm that sorts
+# an array by first breaking it down into smaller arrays, and then building
+# the array back together the correct way so that it is sorted.
 def merge_ordered_lists(listA, listB):
     a = 0
     b = 0
