@@ -1,4 +1,6 @@
 def counting_sort(arr):
+    # The Counting Sort algorithm sorts an array by counting the number 
+    # of times each value occurs.
     m = max(arr)
     freq = [0 for i in range(m+1)]
     print(freq)
