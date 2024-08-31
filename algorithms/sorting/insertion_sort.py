@@ -1,4 +1,8 @@
 def insertion_sort(list):
+    # The Insertion Sort algorithm uses one part of the array to hold
+    # the sorted values, and the other part of the array to hold values
+    # that are not sorted yet.
+    
     for i in range(1, len(list)):
         temp_value = list[i]
         position = i
