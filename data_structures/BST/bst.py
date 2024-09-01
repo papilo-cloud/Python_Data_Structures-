@@ -14,21 +14,22 @@ class Tree:
         node = Node(data)
         if not self.root_node:
             self.root_node = node
-        
-        current = self.root_node
-        parent = None
-        while True:
-            parent = current
-            if node.data > current.data:
-                current = current.right_child
-                if not current:
-                    parent.right_child = node
-                    return
-            else:
-                current = current.left_child
-                if not current:
-                    parent.left_child = node
-                    return
+        else:
+            current = self.root_node
+            parent = None
+            while True:
+                parent = current
+                if node.data > current.data:
+                    current = current.right_child
+                    if not current:
+                        parent.right_child = node
+                        return
+                else:
+                    current = current.left_child
+                    if not current:
+                        parent.left_child = node
+                        return
+                
     def search(self, data):
         current = self.root_node
         while True:
@@ -40,7 +41,18 @@ class Tree:
                 current = current.left_child
             else:
                 current = current.right_child
-                
+    
+    def lowest_common_ancestor(self, root, n1, n2):
+        current = root
+        if not current:
+            return None
+        if (current.data > n1 and current.data > n2):
+            return self.lca(current.left_child, n1, n2)
+        
+        if (current.data < n1 and current.data < n2):
+            return self.lca(current.right_child, n1, n2)
+        return current.data
+    
     # Depth-first traversal
     def inorder_traversal(self, node):
         if not node:
