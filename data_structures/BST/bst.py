@@ -8,6 +8,7 @@ class Node:
 class Tree:
     def __init__(self) -> None:
         self.root_node = None
+        self.hd = 0 # horizontal distance
     
     # Insertion of a node in a BST takes O(h), where h is the height of the Tree.
     def insert(self, data):
@@ -82,6 +83,32 @@ class Tree:
             if node.right_child:
                 traversal_queue.append(node.right_child)
         return list_of_nodes
+    
+    def top_view(self, root):
+        if not root:
+            return
+        
+        queue = []
+        hash_table = {}
+        hd = 0 # horizontal distance.
+        root.hd = hd
+        queue.append(root)
+        
+        while queue:
+            root = queue[0]
+            hd = root.hd
+            
+            if hd not in hash_table:
+                hash_table[hd] = root.data 
+            if root.left:
+                root.left.hd = hd - 1
+                queue.append(root.left)
+            if root.right:
+                root.right.hd = hd + 1
+                queue.append(root.right)
+            queue.pop(0)
+        for i in sorted(hash_table):
+            print(hash_table[i], end=' ')
     
     def get_min(self):
         current = self.root_node
