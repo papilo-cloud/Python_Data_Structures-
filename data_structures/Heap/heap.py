@@ -21,3 +21,19 @@ class Heap:
         new_node_index = len(self.data) - 1 
         
         # The following loop executes the "trickle up" algorithms.
+        while (new_node_index > 0) and (self.data[new_node_index] > 
+                                        self.data[self.parent_index(new_node_index)]):
+            
+            temp = self.data[self.parent_index(new_node_index)]
+            self.data[self.parent_index(new_node_index)] = self.data[new_node_index]
+            self.data[new_node_index] = temp
+            
+            new_node_index = self.parent_index(new_node_index)
+
+hp = Heap()
+hp.insert(20)
+hp.insert(80)
+hp.insert(100)
+
+print(hp.root_node())
+print('hello')
