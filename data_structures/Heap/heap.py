@@ -8,52 +8,50 @@ class Heap:
     
     def last_node(self):
         return self.data[-1]
-    def left_child(self, index):
+    
+    def left_child_index(self, index):
         return (index * 2) + 1
     
-    def right_child(self, index):
+    def right_child_index(self, index):
         return (index * 2) + 2
     
     def parent_index(self, index):
         return (index - 1) // 2
     
     def insert(self, value):
-        self.data.append(value)
         self.count += 1
-        new_node_index = len(self.data) - 1 
-        
-        # The following loop executes the "trickle up" algorithms.
-        while (new_node_index > 0) and (self.data[new_node_index] > 
-                                        self.data[self.parent_index(new_node_index)]):
-            
-            temp = self.data[self.parent_index(new_node_index)]
-            self.data[self.parent_index(new_node_index)] = self.data[new_node_index]
-            self.data[new_node_index] = temp
-            
-            new_node_index = self.parent_index(new_node_index)
+        self.data.append(value)
+        new_node_index = len(self.data) - 1
+        self.trickle_up(new_node_index)
     
     def delete(self):
         self.data[0] = self.data.pop()
         self.count -= 1
-        trickle_node_index = 0
+        self.trickle_down(0)
         
-        self.trickle_down(trickle_node_index)
+    
+    def trickle_up(self, index):
+        if index > 0 and (
+            self.data[index] > self.data[self.parent_index(index)]):
+            temp = self.data[index]
+            self.data[index] = self.data[self.parent_index(index)]
+            self.data[self.parent_index(index)] = temp
+            self.trickle_up(self.parent_index(index))
     
     def trickle_down(self, index):
-        largest = index
-        if self.left_child(index) < self.count and (
-            self.data[self.left_child(index)] >= self.data[index]):
-            largest = self.left_child(index)
-            
-        elif self.right_child(index) < self.count and (
-            self.data[self.right_child(index)] >= self.data[index]):
-            largest = self.right_child(index)
+        max_index = index
+        if self.left_child_index(index) < self.count and (
+            self.data[self.left_child_index(index)] >= max_index):
+            max_index = self.left_child_index(index)
+        elif self.right_child_index(index) < self.count and (
+            self.data[self.right_child_index(index)] >= max_index):
+            max_index = self.right_child_index(index)
         
-        if largest != index:
+        if max_index != index:
             temp = self.data[index]
-            self.data[index] = self.data[largest]
-            self.data[largest] = temp
-            self.trickle_down(largest)
+            self.data[index] = self.data[max_index]
+            self.data[max_index] = temp
+            self.trickle_down(max_index)
 
 hp = Heap()
 hp.insert(20)
