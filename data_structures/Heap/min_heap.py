@@ -47,6 +47,29 @@ class Heap:
             self.data[lesser_child_index] = temp
             trickle_node_index = lesser_child_index
         return value
+    
+    def delete_value(self, node_val):
+        
+        value =  value = None
+        i = 0
+        while i < len(self.data):
+            if self.data[i] == node_val:
+                value = self.data[i]
+                break
+            i += 1
+                
+        self.count -= 1
+        self.data[i] = self.data[-1]
+        self.data.pop(i)
+        trickle_node_index = i
+        
+        while self.has_lesser_child(trickle_node_index):
+            lesser_child_index = self.calculate_lesser_child_index(trickle_node_index)
+            temp = self.data[trickle_node_index]
+            self.data[trickle_node_index] = self.data[lesser_child_index]
+            self.data[lesser_child_index] = temp
+            trickle_node_index = lesser_child_index
+        return value
 
     def has_lesser_child(self, index):
         return ((self.left_child_index(index) < self.count and (
