@@ -44,3 +44,15 @@ class Trie:
         if not current_node:
             return None
         return self.collect_all_words(current_node)
+    
+    def autocorrect(self, word):
+        current_node = self.root
+        word_found_so_far = ''
+        
+        for char in word:
+            if current_node.children.get(char):
+                word_found_so_far += char
+                current_node = current_node.children[char]
+            else:
+                return word_found_so_far + self.collect_all_words(current_node)[0]
+        return word
