@@ -13,5 +13,10 @@ def are_mirror(root1, root2):
         return False
     if root1.val != root2.val:
         return False
+    left = are_mirror(root1.left, root2.left) and are_mirror(root1.right, root2.right)
+    right = are_mirror(root1.left, root2.right) and are_mirror(root1.right, root2.left)
+    
+    if left or right:
+        return True
     else:
-        return are_mirror(root1.left, root2.right) and are_mirror(root1.right, root2.left)
+        return False
