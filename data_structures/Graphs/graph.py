@@ -17,3 +17,22 @@ class Vertex:
             if visited.get(adj_vrtx.value):
                 continue
             self.dfs_traverse(adj_vrtx, visited)
+    
+    # Searching for a particular vertex.
+    def dfs(self,vertex, search_val, visited={}):
+        if vertex.value == search_val:
+            return vertex
+        
+        visited[vertex.value] = 1
+        
+        for adj_vrtx in vertex.adjacent_vertices:
+            if visited.get(adj_vrtx.value):
+                continue
+            if vertex.value == search_val:
+                return vertex
+            
+            searched_value = self.dfs(adj_vrtx, search_val, visited)
+            
+            if searched_value:
+                return searched_value
+        return None
