@@ -28,7 +28,7 @@ def find_max(root):
     
     while q:
         node = q.pop
-        if max_data > node.val:
+        if max_data < node.val:
             max_data = node.val
         if node.left:
             q.append(node.left)
