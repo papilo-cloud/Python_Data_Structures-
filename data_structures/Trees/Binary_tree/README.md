@@ -16,26 +16,38 @@
     - Time Complexity: __O(*n*)__
     - Space Complexity: __O(*n*)__
 
-5. [Given an algorithms for finding LCA of two nodes](https://github.com/papilo-cloud/Python_Data_Structures-/blob/main/data_structures/Trees/Binary_tree/Solutions/lca.py)
+5. [Give an algorithms for finding LCA of two nodes](https://github.com/papilo-cloud/Python_Data_Structures-/blob/main/data_structures/Trees/Binary_tree/Solutions/lca.py)
     - Time Complexity: __O(*n*)__
     - Space Complexity: __O(*n*)__
 
-6. [Given an algorithms for finding the size of a binary tree](https://github.com/papilo-cloud/Python_Data_Structures-/blob/main/data_structures/Trees/Binary_tree/Solutions/find_size.py)
+6. [Give an algorithms for finding the size of a binary tree](https://github.com/papilo-cloud/Python_Data_Structures-/blob/main/data_structures/Trees/Binary_tree/Solutions/find_size.py)
     - Time Complexity: __O(*n*)__
     - Space Complexity: __O(*n*)__
 
-7. [Given an algorithms for deleting the tree](https://github.com/papilo-cloud/Python_Data_Structures-/blob/main/data_structures/Trees/Binary_tree/Solutions/delete_tree.py)
+7. [Give an algorithms for deleting the tree](https://github.com/papilo-cloud/Python_Data_Structures-/blob/main/data_structures/Trees/Binary_tree/Solutions/delete_tree.py)
     - Time Complexity: __O(*n*)__
     - Space Complexity: __O(*n*)__
 
-8. [Given an algorithms for finding the deepest node of the binary tree](https://github.com/papilo-cloud/Python_Data_Structures-/blob/main/data_structures/Trees/Binary_tree/Solutions/find_deepest_node.py)
+8. [Give an algorithms for finding the deepest node of the binary tree](https://github.com/papilo-cloud/Python_Data_Structures-/blob/main/data_structures/Trees/Binary_tree/Solutions/find_deepest_node.py)
     - Time Complexity: __O(*n*)__
     - Space Complexity: __O(*n*)__
 
-9. [Given an algorithms for finding the number of leaves in the binary tree](https://github.com/papilo-cloud/Python_Data_Structures-/blob/main/data_structures/Trees/Binary_tree/Solutions/number_of_leaves.py)
+9. [Give an algorithms for finding the number of leaves in the binary tree](https://github.com/papilo-cloud/Python_Data_Structures-/blob/main/data_structures/Trees/Binary_tree/Solutions/number_of_leaves.py)
     - Time Complexity: __O(*n*)__
     - Space Complexity: __O(*n*)__
 
-10. [Given an algorithms for finding the number of full nodes in the binary tree](https://github.com/papilo-cloud/Python_Data_Structures-/blob/main/data_structures/Trees/Binary_tree/Solutions/number_of_full_nodes.py)
+10. [Give an algorithms for finding the number of full nodes in the binary tree](https://github.com/papilo-cloud/Python_Data_Structures-/blob/main/data_structures/Trees/Binary_tree/Solutions/number_of_full_nodes.py)
+    - Time Complexity: __O(*n*)__
+    - Space Complexity: __O(*n*)__
+
+11. [Give an algorithms for constructing binary tree from Inorder and Preorder traversals](https://github.com/papilo-cloud/Python_Data_Structures-/blob/main/data_structures/Trees/Binary_tree/Solutions/build_tree.py)
+    - Time Complexity: __O(*n*)__
+    - Space Complexity: __O(*n*)__
+
+12. [Given a binary tree, print out all its root-to-leaf paths](https://github.com/papilo-cloud/Python_Data_Structures-/blob/main/data_structures/Trees/Binary_tree/Solutions/path_appender.py)
+    - Time Complexity: __O(*n*)__
+    - Space Complexity: __O(*n*)__
+
+12. [Give an algorithms for finding the total sum of all root-to-leaf numbers](https://github.com/papilo-cloud/Python_Data_Structures-/blob/main/data_structures/Trees/Binary_tree/Solutions/sum_numbers.py)
     - Time Complexity: __O(*n*)__
     - Space Complexity: __O(*n*)__
