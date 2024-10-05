@@ -46,7 +46,7 @@ class Trie:
         return words
     
     def autocomplete(self, prefix):
-        current_node = self.search(prefix)
+        current_node = self.find(prefix)
         
         if not current_node:
             return None
