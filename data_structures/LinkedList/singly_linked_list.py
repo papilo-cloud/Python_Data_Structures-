@@ -6,6 +6,7 @@ class Node:
 class LinkedList:
     def __init__(self) -> None:
         self.head = None
+        self.tail = None
         self.size = 0
     
     def insert(self, data):
@@ -18,6 +19,17 @@ class LinkedList:
             while current_node.next:
                 current_node = current_node.next
             current_node.next = new_node
+    
+    def append(self, data):
+        new_node = Node(data)
+        self.size += 1
+        
+        if self.head:
+            self.head.next = new_node
+            self.head = new_node
+        else:
+            self.head = new_node
+            self.tail = new_node
             
     def insert_at_index(self, data, index):
         new_node = Node(data)
