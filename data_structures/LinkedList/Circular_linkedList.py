@@ -18,6 +18,15 @@ class CircularList:
             self.head = new_node
         self.tail.next = self.head
     
+    def print_list(self):
+        current = self.head
+        if current:
+            print(current.data)
+            current = current.next
+        while current != self.head:
+            print(current.data)
+            current = current.next
+    
     def delete(self, data):
         pass
 
