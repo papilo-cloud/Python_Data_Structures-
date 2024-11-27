@@ -28,7 +28,19 @@ class CircularList:
             current = current.next
     
     def delete(self, data):
-        pass
+        current = self.head
+        prev = self.head
+        
+        while prev == current or prev != self.tail:
+            if current.data == data:
+                if current.data == self.head:
+                    self.head = current.next
+                    self.head.next = self.head
+                else:
+                    prev.next = current.next
+                return
+            prev = current
+            current = current.next
 
 
 llist = CircularList()
