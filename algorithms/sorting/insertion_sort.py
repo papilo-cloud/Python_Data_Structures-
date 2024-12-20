@@ -17,3 +17,15 @@ def insertion_sort(list):
     return list
 
 print(insertion_sort([10, 100, 45, 55, 85, 15, 35]))
+# for i in range(1, length):
+#         temp = arr[i]
+#         pos = i - 1
+        
+#         while pos >= 0:
+#             if arr[pos] > temp:
+#                 arr[pos + 1] = arr[pos]
+#                 pos -= 1
+#             else:
+#                 break
+#             arr[pos + 1] = temp
+#         return arr
