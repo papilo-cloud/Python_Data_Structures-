@@ -23,7 +23,7 @@ def longest_sub_arr(arr, k):
             max_len = max(max_len, ln)
         
         if prefix not in mpp:
-            mpp[prefix] = 1
+            mpp[prefix] = i
     print(mpp)
     print(max_len)
 x = [1,2,3]
