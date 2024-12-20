@@ -6,7 +6,7 @@
 def num_of_path(path):
     if path < 0: 
         return 0
-    if path == 0:
+    if path == 0 or path == 1:
         return 1
     return num_of_path(path - 1) + num_of_path(path - 2)  + num_of_path(path - 3)
 
